@@ -15,7 +15,7 @@
 function addNumbers(num1, num2) {
   return num1 + num2;
 }
-
+console.log (addNumbers(2, 4));
 // ⭐️ Example Challenge end ⭐️
 
 
@@ -39,9 +39,20 @@ function addNumbers(num1, num2) {
  *   email: "leia@leia.com",
  * }
 */
-function makePersonObject(/* code here */) {
+
+function makePersonObject(id, name, email) {
   /* code here */
+  return {
+    id: id,
+    name: name,
+    email: email 
+  }
 }
+
+console.log(makePersonObject(23, 'V', 'V@Lambda'));
+
+
+
 
 /**
  * ### Challenge `getName`
@@ -52,13 +63,27 @@ function makePersonObject(/* code here */) {
  * and return a string that reads `Hello, my name is {name}`,
  * where `{name}` is the name stored in the object.
  * 
+ * 
  * For example, if we invoke `getName`
  * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
  * the returned value should look like `Hello, my name is Leia`.
 */
-function getName(/* code here */) {
-  /* code here */
+
+
+
+
+function getName(banana) {
+  return `Hello my name is ${banana.name}`
 }
+ 
+
+
+
+
+
+
+
+
 
 /**
  * ### Challenge `makeSmartPerson`
@@ -73,8 +98,26 @@ function getName(/* code here */) {
  *         and returns a string like `Hello, my name is {name}`.
  *         where `{name}` is the name passed into `makeSmartPerson`.
 */
-function makeSmartPerson(/* code here */) {
+
+
+
+function makeSmartPerson(name) {
+  return {
+    name: name,
+    sum: function(num1, num2){
+      return num1 + num2;
+    }
+    
+    , 
+
+
+    speak: function(){
+      return `Hello my name is ${name}`;
+    }
+  }
   /* code here */
+  console.log(makeSmartPerson('Gandhi'));
+
 }
 
 
@@ -136,7 +179,7 @@ function get3rdCar(inventory) {
  * it will return `This is a Lincoln Navigator`.
 */
 function getCarInfoByIndex(inventory, index) {
-  /* code here */
+ return `this is a  ${inventory[index].carmake}  ${inventory[index].carmodel}`
 }
 
 /**
@@ -150,8 +193,9 @@ function getCarInfoByIndex(inventory, index) {
  * For example, if getLastCarInfo is invoked passing the inventory inside /data/inventory.js,
  * it will return `This is a Lincoln Town Car`.
 */
-function getLastCarInfo(/* code here */) {
-  /* code here */
+function getLastCarInfo(inventory) {
+
+ return `This is a ${inventory[inventory.length - 1 ].car_make} ${inventory[inventory.length - 1].car_model}`
 }
 
 /**
